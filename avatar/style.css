@@ -1,0 +1,65 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  background: black;
+  overflow: hidden;
+  height: 100%;
+  font-family: Arial, sans-serif;
+}
+
+#hud {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+}
+
+/* smoke canvas */
+#smoke {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+/* HUD canvas */
+#holo {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+}
+
+canvas {
+  width: 100%;
+  height: 100%;
+}
+
+/* scanlines */
+.scanlines {
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(0, 180, 255, 0.08),
+    rgba(0, 180, 255, 0.08) 1px,
+    transparent 2px,
+    transparent 4px
+  );
+  mix-blend-mode: screen;
+}
+
+/* center text */
+#jarvis-text {
+  position: absolute;
+  z-index: 3;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  letter-spacing: 6px;
+  font-size: 28px;
+  font-weight: bold;
+  color: #bff6ff;
+  text-shadow:
+    0 0 8px rgba(0, 200, 255, 0.8),
+    0 0 18px rgba(0, 200, 255, 0.6);
+}
